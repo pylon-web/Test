@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Will You Be My Wife?</title>
+  <style>
+    body {
+      background: pink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #c2185b;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .yes {
+      background: #e91e63;
+      color: white;
+    }
+    .no {
+      background: white;
+      color: #e91e63;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Hey ❤️</h1>
+<h2>Will you be my Valentine? 💘</h2>
+
+<button class="yes" onclick="alert('Yay!! 💖 I knew you would say yes!')">
+  Yes 😍
+</button>
+
+<button class="no" onmouseover="moveButton(this)">
+  No 🙈
+</button>
+
+<script>
+  function moveButton(btn) {
+    btn.style.top = Math.random() * 80 + "%";
+    btn.style.left = Math.random() * 80 + "%";
+  }
+</script>
+
+</body>
+</html>
