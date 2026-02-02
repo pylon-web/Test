@@ -1,58 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Will You Be My Wife?</title>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
   <style>
     body {
-      background: pink;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
       text-align: center;
     }
+
     h1 {
       color: #c2185b;
+      font-size: 2.5rem;
     }
+
+    h2 {
+      color: #880e4f;
+      margin-bottom: 20px;
+    }
+
     button {
-      padding: 12px 25px;
+      padding: 12px 30px;
       font-size: 18px;
-      margin: 10px;
       border: none;
-      border-radius: 8px;
+      border-radius: 25px;
       cursor: pointer;
+      margin: 10px;
     }
+
     .yes {
-      background: #e91e63;
+      background-color: #e91e63;
       color: white;
     }
+
     .no {
-      background: white;
+      background-color: white;
       color: #e91e63;
       position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      color: #e91e63;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-<h1>Hey ❤️</h1>
-<h2>Will you be my Wife? 💘</h2>
+  <h1>Hey ❤️ Vishu</h1>
+  <h2>Will you be my Wife? 💘</h2>
 
-<button class="yes" onclick="alert('Yay!! 💖 I knew you would say yes!')">
-  Yes 😍
-</button>
+  <button class="yes" onclick="yesClicked()">Yes 😍</button>
+  <button class="no" onmouseover="moveButton(this)">No 🙈</button>
 
-<button class="no" onmouseover="moveButton(this)">
-  No 🙈
-</button>
+  <!-- Background Music -->
+  <audio autoplay loop>
+  <source src="https://freemusicarchive.org/file/?id=Happy_Love_-_Calm_Romantic_Background_Music.mp3" type="audio/mpeg">
+</audio>
+
 
 <script>
   function moveButton(btn) {
     btn.style.top = Math.random() * 80 + "%";
     btn.style.left = Math.random() * 80 + "%";
   }
+
+  function yesClicked() {
+    alert("Yay!! 💖 You just made me the happiest person 😘");
+  }
+
+  // Create floating hearts
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }, 300);
 </script>
 
 </body>
